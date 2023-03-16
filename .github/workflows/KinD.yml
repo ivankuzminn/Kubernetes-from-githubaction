@@ -21,7 +21,7 @@ jobs:
           echo -e "Kubernetes version of this cluster: $(kubectl version)" >> Kind.log
       - name: how long it spin up
         run: |
-          echo -e "Spintime: $(($(date '+%s')-${{ steps.start.outputs.start }}))" >> Kind.log
+          echo -e "Spintime: (($(date '+%s')-${{ steps.start.outputs.start }}))" >> Kind.log
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
