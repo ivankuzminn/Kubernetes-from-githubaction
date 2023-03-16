@@ -1,16 +1,18 @@
-name: "Create cluster using minikube"
+
+name: "Create cluster using Minikube"
 on: 
   push:
 
 jobs:
-  minikube:
+  kind:
     runs-on: ubuntu-latest
-    name: minikube
+    name: Minikube
     steps:
       - name: Start time
         run: echo "start=$(date '+%s')" >> $GITHUB_OUTPUT
-      - name: minikube install
-      uses: medyagh/setup-minikube@master
+      - name: Minikube install
+        uses: engineerd/setup-minikube@master
+        with:
       - name: how many nodes it have
         run: |
           echo -e "It have: $(kubectl get nodes | grep -c 'Ready') nodes" >> minikube.log
