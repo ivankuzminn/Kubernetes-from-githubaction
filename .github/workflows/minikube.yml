@@ -11,7 +11,7 @@ jobs:
       - name: Start time
         run: echo "start=$(date '+%s')" >> $GITHUB_OUTPUT
       - name: Minikube install
-        uses: engineerd/setup-minikube@master
+        uses: medyagh/setup-minikube@master
       - name: how many nodes it have
         run: |
           echo -e "It have: $(kubectl get nodes | grep -c 'Ready') nodes" >> minikube.log
