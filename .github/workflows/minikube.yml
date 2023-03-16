@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  kind:
+  minikube:
     runs-on: ubuntu-latest
     name: Minikube
     steps:
@@ -12,7 +12,6 @@ jobs:
         run: echo "start=$(date '+%s')" >> $GITHUB_OUTPUT
       - name: Minikube install
         uses: engineerd/setup-minikube@master
-        with:
       - name: how many nodes it have
         run: |
           echo -e "It have: $(kubectl get nodes | grep -c 'Ready') nodes" >> minikube.log
